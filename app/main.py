@@ -1,8 +1,11 @@
 class Animal:
     alive: list["Animal"] = []
-    def __init__(self, name: str,
-                 health: int = 100,
-                 hidden: bool = False) -> None:
+    def __init__(
+            self,
+            name: str,
+            health: int = 100,
+            hidden: bool = False
+    ) -> None:
         self.name = name
         self.health = health
         self.hidden = hidden
@@ -16,7 +19,9 @@ class Herbivore(Animal):
         self.hidden = not self.hidden
 
 class Carnivore(Animal):
-    def bite(self, name: Animal) -> None:
+    def bite(self,
+             name: Animal
+             ) -> None:
         if isinstance(name, Herbivore):
             if name.hidden is True:
                 return None
